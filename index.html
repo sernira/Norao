@@ -92,29 +92,13 @@
 <center>
 <h3><span style="color:#E86A85;font-weight:bold;">نورا</span> منو میبخشه؟</h3>
 <button id="yes">معلومه</button>
-<button id="no">اصلا</button>
+<button id="no" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfZY6pAwgww61AWDl_bOLB96h3e6MkYqlosohpmrBI5-6MS8Q/viewform?usp=publish-editor'">اصلا</button>
 </center>
 </div>
 
 <script>
-    const yesBtn = document.getElementById("yes");
-    const noBtn = document.getElementById("no");
-
-    let yScale = 1;
-    let nScale = 1;
-
-    noBtn.onclick = () => {
-        yScale += 0.8;  
-        nScale -= 0.25;
-        
-        if (nScale < 0.05) nScale = 0.05;
-
-        yesBtn.style.transform = `scale(${yScale})`;
-        noBtn.style.transform = `scale(${nScale})`;
-    };
-
-    yesBtn.onclick = () => {
-        window.location.href ="next.html"; 
+    document.getElementById("yes").onclick = () => {
+        window.location.href = "next.html";
     };
 </script>
 
