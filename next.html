@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nora 💞</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background:#ff9a9e;
+            font-family:'Vazirmatn', sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            position:relative;
+            padding:20px;
+        }
+
+        .message-box {
+            text-align:center;
+            z-index: 10;
+            padding:20px;
+            background:#fff;
+            border-radius:15px;
+            color:#000;
+        }
+
+
+        .star {
+            position: absolute;
+            top: -20px;
+            color: #fff;
+            font-size: 20px;
+            animation: fall linear forwards;
+            user-select: none;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-box">
+        <p>حالا که بخشیدی اگه یکم صبر کنی یک چیزی واست میفرستم که فکر میکنم خوشحال میشی</p>
+        <h4>خوشگلی دوست دارم ✨🍓</h4>
+    </div>
+
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.innerHTML = '★'; 
+            
+            star.style.left = Math.random() * 100 + 'vw';
+            
+            star.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove();
+            }, 5000);
+        }
+
+        setInterval(createStar, 150);
+    </script>
+
+</body>
+</html>
