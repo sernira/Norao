@@ -1,106 +1,113 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html>
 <head>
- <title>Nora 💞</title>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>NORA</title>
  <style>
- 
-  *{
-   box-sizing:border-box;
-  }
-  
-  body{
-   margin:0px;
-   min-height:100vh;
-   background:#FFCAD4;
-   padding:20px;
-   font-family:"Vazirmatn",sans-serif;
-   align-items:center;
-   justify-content:center;
-   display:flex;
-  }
-  
-  .box{
-   width:100%;
-   max-width:500px;
-   background:#fff;
-   color:#000;
-   padding:28px 20px;
-   border-radius:12px;
-   text-align:right;
-   font-size:14px; 
-   direction:rtl;
-  }
+ @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500&family=Parisienne&display=swap');
 
-  .alert{
-    background:#ffd1dc;
-    border:1px solid #E86A85;
-    border-radius:12px;
-    text-align:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:220px;
-  }
-  
-  .icon{font-size:66px;text-align:center;}
+ *{margin:0;padding:0;box-sizing:border-box}
 
-  button{
-    border:none;
-    border-radius:12px;
-    padding:10px 20px;
-    font-size:15px;
-    cursor:pointer;
-    transition:all 0.2s ease; 
-    font-family:"Vazirmatn",sans-serif;
-    margin:5px;
-  }
- 
- #yes{background:#f26393;color:#fff;}
- #no{background:#fff;color:#000;border:1px solid #eee}
-  
+ body{
+  min-height:100vh;
+  background:#eee8e2;
+  color:#332D2B;
+  font-family:Vazirmatn,sans-serif
+ }
+
+ .page{
+  width:min(100%,435px);
+  margin:auto;
+  padding:18px 15px 40px
+ }
+
+ .photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:5px
+ }
+
+ .letter{
+  position:relative;
+  margin:24px 3px 0;
+  padding:36px 25px 38px;
+  background:#fcfaf4;
+  border:1px solid #e4ddd3;
+  overflow:hidden
+ }
+
+ .letter:before{
+  content:"";
+  position:absolute;
+  inset:9px;
+  border:1px solid #eee6dc
+ }
+
+ hr{border:0;border-top:1px solid #eee6dc}
+
+ .heading{
+  text-align:center;
+  font-size:18px;
+  font-weight:400;
+  margin-bottom:12px
+ }
+
+ .text{
+  color:#514845;
+  line-height:2;
+  font-size:14px;
+  text-align:right;
+  direction:rtl
+ }
+
+ .signature{
+  margin-top:30px;
+  text-align:left;
+  color:#907a71;
+  font-family:Parisienne,cursive;
+  font-size:23px
+ }
+
+ @media(max-width:350px){
+  .page{padding:12px 11px 30px}
+  .letter{padding:31px 21px 34px}
+  .text{font-size:13px}
+ }
+
+ .flower{text-align:center}
+
+ .flower img{
+  width:50px;
+  margin-top:100px;
+  margin-bottom:50px
+ }
  </style>
 </head>
+
 <body>
-<div class="box">
-<div class="icon">🎀</div>
-<p>از اول همه بابت همه اتفاق ها ازت معذرت میخوام از ته دلم میگم که ببخشید</p>
-<p>اوه تاج <span style="color:#E86A85;font-weight:bold;">نورا</span> از سرش افتاده بزن روش تا درست شه.</p>
-<div class="alert">
-    <img id="img1" src="crown.png" width="200" style="cursor:pointer" onclick="document.getElementById('img1').style.display='none'; document.getElementById('img2').style.display='inline-block'">
-    <img id="img2" src="nc.gif" width="200" style="display:none">
-</div>
-<p>مستقیم میرم و واضح داستان رو واست تعریف میکنم.</p>
-<p>۲ سال پیش حدودا همین موقع ها من احساس کردم من و شما بدرد هم دیگه نمیخوریم (قرار نبود برم با یکی دیگه) (احمق بودم)</p>
-<p>همین موقع ها که ناامید بودم یک گروهی بود که من هیچ پیامی توش ندادم و فقط پیام هارو میخوندم. وقتی اخلاق ها و برخورد افراد مختلف رو توی گروه دیدم اونجا یکم متوجه شدم که چقدر شما دختر خوبی هستی چقدر کاملی بی نظیری</p>
-<p>اتفاقی توی یوتیوب به یک فیلم از یک خانوم دکتر برخوردم و نشستم‌ نگاه کردم (نمیدونم چیشد خیلی اتفاقی دستم خورده بود روش) توی فیلم همونایی رو گفت که توی پیامی که مهدی واست فرستاده بود هست پس اینجا توضیح نمیدم که حوصله ات سر نره.</p>
-<p>بعدش نشستم با خودم فکر کردم دیدم که <span style="color:#E86A85;font-weight:bold;">نورا</span> واقعا دختر خوبیه چیزی کم نداره همه چیز تمومه اگه من به مشکلی باهاش دارم ۱ ساعت باهاش حرف میزنم همه چی درست میشه همه چی خوب پیش میره واقعا دلیل مهمی ندارم که بخوام برم و از همه مهم تر دیدم که از ته دل دوست دارم و نمیتونم چنین کاری بکنم
-    واسه ی همین پشیمون شدم و از اون روز به بعد همیشه تلاش کردم هیچ وقت چنین فکرایی به ذهنمم حتی نرسه.</p>
-<h4>اما قضیه دختره چیه؟</h4>
-<p>اصلا قضیه این دختره با اتفاق بالا از نظر زمانی یکی نیست توی ربات لئو من وقت پیش هرچی بود لایک میکردم اصلا دیسلایک نمیدادم بعد این دختره بعد چند ماه منو لایک کرده بود و آیدی من رفته بود واسش و پیام داد. اول اینکه دختره تازه کنکور داده بود .موضوع صحبت ها تا جایی که یادمه فقط در مورد کنکور فیلم و رشت بود. اینجوری بود که اون یک پیام میداد و چندین ساعت بعد من جوابشو میدادم (چون این توی بایگانی بود و من همش با شما صحبت میکردم) و اون باز چند ساعت بعد جواب منو میداد. منظورم از چند ساعت یعنی بالای ۶ ساعت 12 روز باهاش حرف زدم و هیچ حرف خاصی نزدم. بعد ۱۲ روزم چون علاقه ای به ادامه صحبت نداشتم بهانه اینو آوردم که بله من کار دارم و باید برم و از اونجا کلا دیلیت چت کردم. و اینو واست تعریف هم کرده بودم (یادت رفته ها!)</p>
-<p>بله قبول میکنم خیلی بد توی گروه توضیح دادم اما واقعا هیچی نبود نه خیانت کردم نه دورامو زدم نه به کسی چشم داشتم و نه قصد داشتم برم پیش شخص دیگه </p>
-<center><p><b>دوباره هم ازت معذرت میخوام</b></p></center>
-<p>شما واسم مهمی اهمیت داری واسه ی همین دنبال این بودم که واست کامل توضیح بدم وگرنه اگه اینجوری نبود همون ۵ ماه پیش میرفتم و توی این ۵ ماه هم فقط فکرم شما بودی و هستی</p>
-<h4>حالا چرا گیفت زدم؟</h4>
-<p>چون دوست دارم و قبلا گفته بودی گیفت خرس صورتی دوست داری
-    میخواستم اول با اکانت خودم بزنم اسم خودم مشخص باشه چون بلاک بودم نمیتونستم گیفت بفرستم و مجبور شدم از واسطه استفاده کنم (گیفت خرس صورتی از تلگرام حذف شده به بدبختی تونستم بفرستم)</p>
-    <p>در آخرم لطفا بیا توی گروه اونجا بدون <span style="color:#E86A85;font-weight:bold;">نورا</span> اصلا صفا نداره</p>
-<br>
-<hr>
-<br>
-<center>
-<h3><span style="color:#E86A85;font-weight:bold;">نورا</span> منو میبخشه؟</h3>
-<button id="yes">معلومه</button>
-<button id="no" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfZY6pAwgww61AWDl_bOLB96h3e6MkYqlosohpmrBI5-6MS8Q/viewform?usp=publish-editor'">اصلا</button>
-</center>
-</div>
+<main class="page">
+ <div class="photo"><img src="ne.png"></div>
 
-<script>
-    document.getElementById("yes").onclick = () => {
-        window.location.href = "next.html";
-    };
-</script>
+ <article class="letter">
+  <h1 class="heading">برای تو</h1>
+  <hr><br>
 
+  <div class="text">
+   <p>او ماه است، گاهی پرنور و کامل، گاهی زخمی و رنگ پریده</p>
+   <p>اما چیزی از ماه بودنش کم نمیکند</p>
+   <p>ماه برای آسمان همیشه ماه است.</p>
+   <br>
+   <p>اگر هزار نفر تو را دوست داشته باشند من یکی از آن ها هستم</p>
+   <p>اگر یک نفر تو را دوست داشته باشد آن یک نفر من هستم</p>
+   <p>اگر کسی تو را دوست نداشته باشد بدان که من هنوز دوستت دارم.</p>
+  </div>
+
+  <div class="signature">Amira</div>
+ </article>
+
+ <div class="flower"><img src="flower.png"></div>
+</main>
 </body>
 </html>
