@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nora 🍓</title>
+<style>
+ *{box-sizing:border-box}
+ html,body{width:100%;height:100%;margin:0;overflow:hidden}
+ body{
+  display:grid;
+  place-items:center;
+  background:#080808;
+  color:#fff;
+  font-family:Arial,sans-serif
+ }
+ 
+ #slider{
+  position:relative;
+  width:min(92vw,92vh);
+  height:min(92vw,92vh);
+  overflow:hidden;
+  touch-action:none;
+  cursor:grab
+ }
+ #slider:active{cursor:grabbing}
+  
+ #track{
+  display:flex;
+  direction:ltr;
+  width:100%;
+  height:100%;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1)
+ }
+  
+ .slide{
+  flex:0 0 100%;
+  width:100%;
+  height:100%;
+  overflow:hidden
+ }
+ 
+ .nav{
+  position:absolute;
+  top:50%;
+  z-index:10;
+  width:28px;
+  height:28px;
+  margin-top:-17px;
+  border:0;
+  border-radius:50%;
+  background:#666666;
+  color:#fff;
+  font-size:18px;
+  line-height:10px;
+  cursor:pointer;
+  opacity:.85;
+  transition:.2s;
+  backdrop-filter:blur(6px)
+ }
+ .nav:hover{background:#383838;opacity:1} 
+ .prev{left:10px}
+ .next{right:10px}
+  
+ #dots{
+  position:fixed;
+  bottom:35px;
+  left:50%;
+  display:flex;
+  gap:5px;
+  direction:ltr;
+  transform:translateX(-50%)
+ }
+ 
+ .dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#555;
+  cursor:pointer;
+  transition:.3s;
+ }
+ 
+ .dot.active{
+  width:18px;
+  border-radius:5px;
+  background:#fff;
+ }
+ 
+ @media(max-width:650px){
+  .nav{
+   display:none !important;
+  }
+  .prev{left:8px}
+  .next{right:8px}
+ }
+
+</style>
+</head>
+<body>
+
+<main id="slider">
+<div id="track">
+<section class="slide">
+<img src="1.PNG" width="100%" height="auto">
+</section>
+
+<section class="slide">
+<img src="2.PNG" width="100%" height="auto">
+</section>
+
+<section class="slide">
+<img src="3.PNG" width="100%" height="auto">
+</section>
+
+<section class="slide">
+<img src="4.PNG" width="100%" height="auto">
+</section>
+
+<section class="slide">
+<img src="5.PNG" width="100%" height="auto">
+</section>
+
+<section class="slide">
+<img src="6.PNG" width="100%" height="auto">
+</section>
+</div>
+
+<button class="nav prev" id="prev">›</button>
+<button class="nav next" id="next">‹</button>
+</main>
+
+<div id="dots">
+<i class="dot active"></i>
+<i class="dot"></i>
+<i class="dot"></i>
+<i class="dot"></i>
+<i class="dot"></i>
+<i class="dot"></i>
+</div>
+
+<script>
+const slider=document.querySelector("#slider"),track=document.querySelector("#track"),slides=document.querySelectorAll(".slide"),dots=document.querySelectorAll(".dot"),prev=document.querySelector("#prev"),next=document.querySelector("#next");
+let index=0,startX=0,currentX=0,dragging=false;
+
+function update(){
+track.style.transform=`translate3d(${-index*100}%,0,0)`;
+dots.forEach((dot,i)=>dot.classList.toggle("active",i===index));
+}
+
+function go(i){
+index=Math.max(0,Math.min(i,slides.length-1));
+track.style.transition=".45s cubic-bezier(.22,.61,.36,1)";
+update();
+}
+
+dots.forEach((dot,i)=>dot.onclick=()=>go(i));
+prev.onclick=()=>go(index-1);
+next.onclick=()=>go(index+1);
+
+slider.onpointerdown=e=>{
+if(e.target.closest(".nav"))return;
+dragging=true;
+startX=currentX=e.clientX;
+track.style.transition="none";
+slider.setPointerCapture(e.pointerId);
+};
+
+slider.onpointermove=e=>{
+if(!dragging)return;
+currentX=e.clientX;
+const distance=currentX-startX;
+const percent=distance/slider.clientWidth*100;
+track.style.transform=`translate3d(${-index*100+percent}%,0,0)`;
+};
+
+slider.onpointerup=()=>{
+if(!dragging)return;
+dragging=false;
+const distance=currentX-startX;
+Math.abs(distance)>slider.clientWidth*.15?go(index+(distance<0?1:-1)):go(index);
+};
+
+slider.onpointercancel=()=>{
+dragging=false;
+go(index);
+};
+
+onkeydown=e=>{
+if(e.key==="ArrowLeft")go(index+1);
+if(e.key==="ArrowRight")go(index-1);
+};
+
+update();
+</script>
+</body>
+</html>
