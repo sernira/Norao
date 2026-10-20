@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love</title>
+<style>
+
+ *{box-sizing:border-box;}
+ 
+ body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#121212;
+  color:#fff;
+  font-family:vazir;
+  font-size:15px;
+  overflow:hidden;
+ }
+ 
+ .card{
+  width:min(90%,390px);
+  padding:38px 26px;
+  text-align:center;
+  background:#20202c;
+  border-radius:15px;
+ }
+ 
+ .emoji{
+  font-size:65px;
+  margin-bottom:22px;
+  display:block;
+ }
+ 
+ p{
+  line-height:2.2;
+  margin:0 0 26px;
+ }
+ 
+ button{
+  border:0;
+  border-radius:12px;
+  padding:14px;
+  width:100%;
+  background:#c90076;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  font-family:vazir;
+ }
+ 
+ #kissScreen{
+  position:fixed;
+  inset:0;
+  background:#0b0b10;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:5;
+ }
+ 
+ #kiss{
+  font-size:clamp(130px,35vw,240px);
+  animation:kiss .9s cubic-bezier(.2,1.5,.5,1) both
+ }
+ 
+ @keyframes kiss{0%{transform:scale(0) rotate(-20deg)}70%{transform:scale(1.2) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+ <span class="emoji" id="emoji">💗</span>
+ <p id="message">اینجا فقط برای کساییه که عاشق عباس هستن <br> اگه عاشق عباس نیستید خارج شید.</p>
+ <button id="next" onclick="nextStep()">من که خیلی عاشق امیرم</button>
+</div>
+
+<div class="card" id="secondCard" style="display:none;">
+ <span class="emoji">🥹</span>
+ <p>ای خداااا منم خیلی دوست دارم عزیزم <br> بزن روی دکمه زیر</p>
+ <button onclick="showKiss()">بریم امیر جون</button>
+</div>
+
+<div id="kissScreen">
+  <div id="kiss">💋</div>
+</div>
+
+<script>
+function nextStep(){
+  document.getElementById('card').style.display='none';
+  document.getElementById('secondCard').style.display='block';
+}
+
+function showKiss(){
+  document.getElementById('secondCard').style.display='none';
+  document.getElementById('kissScreen').style.display='flex';
+}
+</script>
+</body>
+</html>
